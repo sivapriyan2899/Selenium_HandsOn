@@ -22,8 +22,27 @@ public class Calendar {
 		calendarInput.click();
 		
 		
-	//	WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
-	//	WebElement calendarInput = wait.until(ExpectedConditions.elementToBeClickable(By.id("datepicker")));
+		String monthYear = driver.findElement(By.cssSelector("div.ui-datepicker-title")).getText();
+		String month = monthYear.split(" ")[0].trim();
+		String year = monthYear.split(" ")[1].trim();
+		
+		//following loop will iterate to the year 2023 and month June
+		while(!(month.equals("June") && year.equals("2023"))){
+			WebElement prevButton = driver.findElement(By.cssSelector("a.ui-datepicker-prev.ui-corner-all > span"));
+			prevButton.click();
+			
+			String newMonthYear = driver.findElement(By.cssSelector("div.ui-datepicker-title")).getText();
+			month = newMonthYear.split(" ")[0].trim();
+			year = newMonthYear.split(" ")[1].trim();
+		}
+		
+		//will select the date
+		WebElement selectDate = driver.findElement(By.xpath("//a[contains(text(), '28')]"));
+		selectDate.click();
+		
+		
+		
+		
 		
 	}
 
