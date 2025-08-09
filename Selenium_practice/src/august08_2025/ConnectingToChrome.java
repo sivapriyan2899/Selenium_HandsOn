@@ -6,12 +6,10 @@ import org.testng.annotations.Test;
 
 public class ConnectingToChrome {
 	
-	
-	
-
 	public static void main(String[] args) throws InterruptedException {
 		
-		System.setProperty("webdriver.chrome.driver", "D:\\Automation Testing\\chromedriver-win64\\chromedriver.exe");
+		System.setProperty("webdriver.chrome.driver", 
+				"D:\\Automation Testing\\chromedriver-win64\\chromedriver.exe");
 		
 		WebDriver driver = new ChromeDriver();
 		driver.manage().window().maximize();
@@ -21,5 +19,4 @@ public class ConnectingToChrome {
 		
 		driver.quit();
 	}
-
 }
