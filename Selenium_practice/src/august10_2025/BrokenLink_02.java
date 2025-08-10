@@ -11,7 +11,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 
-public class BrokenLink {
+public class BrokenLink_02 {
 	
 	
 	public static void checkBrokenLink(String link) {
