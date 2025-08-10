@@ -19,7 +19,10 @@ public class BrokenLink_02 {
 		
 		try {
 			
-		URL url = new URI(link).toURL(); //URL(String str) is deprecated in newer java version 20
+		URL url = new URI(link).toURL(); 
+		//new URL(String str) -----> is deprecated in java 20+ version. 
+		//URL itself is not deprecated—only its constructors
+		
 		HttpURLConnection httpConnection = (HttpURLConnection)  url.openConnection();
 		httpConnection.setConnectTimeout(5000);
 		httpConnection.connect();
