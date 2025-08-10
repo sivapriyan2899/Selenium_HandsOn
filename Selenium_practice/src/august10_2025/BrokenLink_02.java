@@ -1,7 +1,8 @@
 package august10_2025;
 
-import java.io.IOException;
+
 import java.net.HttpURLConnection;
+import java.net.URI;
 import java.net.URL;
 import java.util.ArrayList;
 import java.util.List;
@@ -18,7 +19,7 @@ public class BrokenLink_02 {
 		
 		try {
 			
-		URL url = new URL(link);
+		URL url = new URI(link).toURL(); //URL(String str) is deprecated in newer java version 20
 		HttpURLConnection httpConnection = (HttpURLConnection)  url.openConnection();
 		httpConnection.setConnectTimeout(5000);
 		httpConnection.connect();
