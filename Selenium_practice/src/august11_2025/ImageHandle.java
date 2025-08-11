@@ -11,6 +11,8 @@ public class ImageHandle {
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 
+		//from UI perspective, to check image broken means can use naturalWidth.
+		//for link validation, can use URL class.
 		System.setProperty("webdriver.chrome.driver", "D:\\Automation Testing\\chromedriver-win64\\chromedriver.exe");
 		WebDriver driver = new ChromeDriver();
 		driver.manage().window().maximize();
@@ -20,8 +22,9 @@ public class ImageHandle {
 		cShopping.click();
 		
 		WebElement imageElement = driver.findElement(By.xpath("//div[@id='desktop-grid-2']//img"));
-		//imageElement.click();
 		
+		//naturalWidth is a JavaScript DOM property
+		//not HTML property like href, class, etc.
 		JavascriptExecutor execute = (JavascriptExecutor) driver;
 		Long var = (Long) execute.executeScript("return arguments[0].naturalWidth;", imageElement);
 		
