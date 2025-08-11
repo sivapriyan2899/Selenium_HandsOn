@@ -7,9 +7,9 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 
-public class DownloadFile_verify {
+public class DownloadFile_verify_01 {
 
-	public static void main(String[] args) {
+	public static void main(String[] args) throws InterruptedException {
 		// TODO Auto-generated method stub
 
 		System.setProperty("webdriver.chrome.driver", "D:\\Automation Testing\\chromedriver-win64\\chromedriver.exe");
@@ -20,14 +20,17 @@ public class DownloadFile_verify {
 		WebElement Dbutton = driver.findElement(By.id("j_idt93:j_idt95"));
 		Dbutton.click();
 		
+		Thread.sleep(3000);
+		
 		File fileLocation = new File("C:\\Users\\SIVA\\Downloads");
 		File[] allFiles = fileLocation.listFiles();
 		
 		for(File file : allFiles) {
-			if(file.getName().equals("TestLeaf Logo")) {
+			//System.out.println(file.getName());
+			if(file.getName().equals("TestLeaf Logo.png")) {
+				System.out.println("file is downloaded");
 				return;
 			}
 		}
 	}
-
 }
