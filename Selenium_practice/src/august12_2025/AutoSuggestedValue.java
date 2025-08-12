@@ -21,7 +21,18 @@ public class AutoSuggestedValue {
 		
 		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
 		wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath("//div[normalize-space(text())='From']/ancestor::div[contains(@class,'placeHolderContainer')]"))).click();
+	
+		//to inspect the element which disappear after clicking on other. create snipet in sources and paste below code.
+		//setTimeout(function(){debugger;}, 5000);
+		//this will freeze the browser, after timeout and allow us to inspect.
 		
+		Thread.sleep(3000);
+		
+		List<WebElement> suggestedValues = driver.findElements(By.xpath("//div[@class='searchCategory___12a664']/div[contains(@role,'option')]"));
+		
+		for(WebElement element : suggestedValues) {
+			System.out.println(element.getText());
+		}
 		
 	}
 
