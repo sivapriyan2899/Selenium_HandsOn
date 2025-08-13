@@ -43,20 +43,28 @@ public class HandlingAlert_02 {
 		Handle02Alert.accept();	
 	}
 	
-	public static void maxMixSweetAlert(WebDriver driver) throws InterruptedException {
+	public static void maxMixSweetAlert(WebDriver driver) {
 		WebElement aButton = driver.findElement(By.id("j_idt88:j_idt111"));
 		aButton.click();
-		Thread.sleep(2000);
+		pauseMethod(2000);
 		String xpath = "//*[contains(@class, 'ui-dialog-titlebar-icon ui-dialog-titlebar-maximize ui-corner-all') and @role='button']";
 		WebElement sAlertMax = driver.findElement(By.xpath(xpath));
 		sAlertMax.click();
-		Thread.sleep(2000);
+		pauseMethod(2000);
 		sAlertMax.click();
-		Thread.sleep(2000);
+		pauseMethod(2000);
 		WebElement closeButton = driver.findElement(By.xpath("//span[contains(text(),'Min and Max')]//following::a[1]"));
 		closeButton.click();
 	}
 	
+	public static void pauseMethod(Integer sec) {
+		try {
+			Thread.sleep(sec);
+		}
+		catch (Exception e){
+			e.printStackTrace();
+		}
+	}
 
 	public static void main(String[] args) throws InterruptedException {
 		// TODO Auto-generated method stub
