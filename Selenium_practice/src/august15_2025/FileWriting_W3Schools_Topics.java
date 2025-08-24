@@ -26,7 +26,7 @@ public class FileWriting_W3Schools_Topics {
 		String topic;
 		int i =1;
 
-		try (BufferedWriter buffWriter = new BufferedWriter(new FileWriter(resultFile, true))){ 
+		try (BufferedWriter buffWriter = new BufferedWriter(new FileWriter(resultFile))){ 
 			//this is called try-with-resources. whenever dealing with resources that must be closed after execution like 
 			// Filewriter, filereader, input/outpu stream and connection to database 
 			//-------	
